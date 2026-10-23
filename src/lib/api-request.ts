@@ -1,7 +1,7 @@
 import { useSession } from "@/stores/session.store";
 import { ApiError } from "@/lib/api-error";
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL!;
+const BASE_URL = typeof window === "undefined" ? process.env.API_URL : process.env.NEXT_PUBLIC_API_URL;
 
 type QueryValue = string | number | boolean | null | undefined | Array<string | number>;
 
